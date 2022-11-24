@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap");
+main .div-card, main ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main ul h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+main ul h3 {
+  font-size: 32px;
+  margin-top: 20px;
+}
+main .card {
+  margin-bottom: 20px;
+  width: 20rem;
+}
+
+/* CARD INDEX */
+.flip {
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.5);
+  padding: 1em;
+  width: 280px;
+  height: 254px;
+  transform-style: preserve-3d;
+  transition: 3s ease;
+  display: inline-block;
+}
+
+.flip:hover {
+  transform: rotateY(180deg);
+}
+
+/* Content */
+.flip .content {
+  transform-style: preserve-3d;
+}
+
+.flip .back, .flip .front {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.flip .back {
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.flip h2, .flip p {
+  transform: translateZ(90px);
+  text-shadow: 0 0 3px black;
+  text-align: center;
+}
+
+.flip h2 {
+  font-size: 3em;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.flip p {
+  font-size: 1em;
+  color: #eee;
+  line-height: 1.6em;
+}
+
+.flip::before,
+.flip::after {
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  background-image: linear-gradient(156deg, rgb(0, 0, 0) 37%, rgb(60, 78, 122) 100%);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: rotateY(180deg) translateZ(1px);
+}
+
+.flip::before {
+  transform: none;
+  background-image: linear-gradient(156deg, rgb(0, 0, 0) 37%, rgb(60, 122, 108) 100%);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) {
+  .header-logo {
+    width: 130px;
+    height: 45px;
+  }
+  #navbarNav {
+    justify-content: end;
+  }
+  #navbarNav a {
+    font-size: 18px;
+  }
+  #navbarNav a:hover {
+    background-color: #839788;
+  }
+  main ul h1 {
+    font-size: 55px;
+  }
+  main ul h3 {
+    font-size: 32px;
+  }
+  main .card {
+    width: 30rem;
+  }
+  main .card h4 {
+    font-size: 35px;
+  }
+  main .card p {
+    font-size: 20px;
+  }
+  main .card a {
+    font-size: 22px;
+  }
+  .flip {
+    width: 340px;
+    height: 280px;
+  }
+  .flip h2 {
+    font-size: 3.5em;
+  }
+  .flip p {
+    font-size: 1.2em;
+  }
+}
+/* DESKTOP */
+@media screen and (min-width: 1024px) {
+  #navbarNav {
+    justify-content: end;
+  }
+  #navbarNav a {
+    font-size: 25px;
+    margin-right: 10px;
+  }
+  .header-logo {
+    width: 175px;
+    height: 60px;
+  }
+  main ul h1 {
+    font-size: 70px;
+  }
+  main ul h3 {
+    font-size: 42px;
+  }
+  main .div-card {
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    grid-auto-rows: 6fr 6fr;
+    justify-items: center;
+  }
+  main .div-card .card {
+    width: 32rem;
+  }
+  main .div-card .card img {
+    height: 287px;
+  }
+  main .div-card .card h4 {
+    font-size: 38px;
+  }
+  main .div-card .card p {
+    font-size: 19px;
+  }
+  main .div-card .card a {
+    font-size: 23px;
+  }
+  .flip {
+    width: 530px;
+    height: 400px;
+  }
+  .flip h2 {
+    font-size: 5.5em;
+  }
+  .flip p {
+    font-size: 2em;
+  }
+  footer {
+    margin-top: 10px;
+  }
+  footer .footer-ul {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+* {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: white;
+  margin-right: 0;
+  overflow-x: hidden;
+}
+body ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#grid-padre {
+  display: grid;
+  grid-template-areas: "header" "main" "footer";
+}
+
+header {
+  grid-area: header;
+  width: 100%;
+}
+header nav {
+  background-color: black;
+  font-size: 15px;
+}
+header nav img {
+  width: 101px;
+  height: 42px;
+}
+
+main {
+  grid-area: main;
+  height: 100%;
+}
+
+footer {
+  grid-area: footer;
+  background-color: black;
+  color: white;
+  width: 100%;
+}
+footer ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+footer ul li {
+  margin: 5px;
+}
+footer ul li img {
+  width: 30px;
+  height: 30px;
+}
+
+/*# sourceMappingURL=estilos.css.map */

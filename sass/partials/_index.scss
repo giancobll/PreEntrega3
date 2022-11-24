@@ -1,0 +1,235 @@
+%flex-colum{
+    display: flex;        
+    flex-direction: column;
+    align-items: center    
+}
+
+main{      
+    ul{    
+        @extend %flex-colum;         
+        h1{
+            font-size: 40px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            
+        }  
+        h3{
+            font-size: 32px; 
+            margin-top: 20px;   
+        } 
+    }
+    .div-card{
+        @extend %flex-colum;        
+    }
+    .card{        
+        margin-bottom: 20px;
+        width: 20rem;
+    }      
+}
+
+/* CARD INDEX */
+.flip {
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.5);
+    padding: 1em;
+    width: 280px;
+    height: 254px;
+    transform-style: preserve-3d;
+    transition: 3s ease;
+    display: inline-block;
+  }
+  
+  .flip:hover {
+    transform: rotateY(180deg);
+  }
+  /* Content */
+  .flip .content {
+    transform-style: preserve-3d;
+  }
+  
+  .flip .back, .flip .front {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .flip .back {
+    transform: rotateY(180deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .flip h2, .flip p {
+    transform: translateZ(90px);
+    text-shadow: 0 0 3px black;
+    text-align: center;
+  }
+  
+  .flip h2 {
+    font-size: 3em;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+  
+  .flip p {
+    font-size: 1em;
+    color: #eee;
+    line-height: 1.6em;
+  }
+  
+  .flip::before,
+  .flip::after {
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-image: linear-gradient(156deg,
+    rgba(0, 0, 0, 1) 37%,
+    rgba(60, 78, 122, 1) 100%);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: rotateY(180deg)translateZ(1px);
+  }
+  
+  .flip::before {
+    transform: none;
+    background-image: linear-gradient(156deg,
+    rgba(0, 0, 0, 1) 37%,
+    rgba(60, 122, 108, 1) 100%);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /* TABLET */
+@media screen and (min-width: 768px){    
+
+   .header-logo{
+        width: 130px;
+        height: 45px;
+    }
+   
+    #navbarNav{       
+        justify-content: end;
+        a{
+            font-size: 18px;
+            &:hover{
+                background-color: #839788;
+            }
+        }    
+    } 
+    
+    main{
+        ul{
+            h1{
+                font-size: 55px;               
+            }
+            h3{
+                font-size: 32px;                   
+            }
+        }
+        .card{           
+            width: 30rem;
+            h4{
+                font-size: 35px;
+            }
+            p{
+                font-size: 20px;
+            }
+            a{
+                font-size: 22px;
+            }
+        } 
+    }
+
+    .flip{
+        width: 340px;
+        height: 280px;
+        h2{
+            font-size: 3.5em;
+        }
+        p{
+            font-size: 1.2em;
+        }    
+    }          
+}
+
+/* DESKTOP */
+@media screen and (min-width: 1024px){       
+
+    #navbarNav{       
+        justify-content: end;   
+        a{
+            font-size: 25px;
+            margin-right: 10px;
+        } 
+    }   
+
+    .header-logo{
+        width: 175px;
+        height: 60px;
+    }  
+    
+    main{
+        ul{
+            h1{
+                font-size: 70px;                
+            }
+            h3{
+                font-size: 42px;                  
+            }
+        }
+        .div-card{
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            grid-auto-rows: 6fr 6fr;
+            justify-items: center;
+               
+            .card{           
+                width: 32rem;
+                img{
+                    height: 287px;
+                }
+                h4{
+                    font-size: 38px;
+                }
+                p{
+                    font-size: 19px;
+                }
+                a{
+                    font-size: 23px;
+                }
+            } 
+        }
+        
+    }    
+
+    .flip{
+        width: 530px;
+        height: 400px;
+        h2{
+            font-size: 5.5em;
+        }
+        p{
+            font-size: 2.0em;
+        }    
+    } 
+
+    footer{
+        margin-top: 10px;
+        .footer-ul{
+            flex-direction: row;
+            justify-content: space-around;      
+          }
+    }
+
+    
+}
+
