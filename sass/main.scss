@@ -15,7 +15,7 @@
 body{
     background-color: white;         
     margin-right: 0;    
-    overflow-x: hidden; 
+    overflow-x: none;     
     ul{
         list-style: none;   
         padding-left: 0;   
@@ -35,7 +35,7 @@ header{
     width: 100%;
     nav{
         background-color: black;  
-        font-size: 15px;   
+        font-size: 16px;   
         img{
             width: 101px;
             height: 42px;
@@ -67,6 +67,52 @@ footer{
             }
         }   
     }          
+}
+
+@media screen and (min-width: 768px){   
+    
+    .header-logo{
+        width: 130px;
+        height: 45px;
+    } 
+
+    #navbarNav{       
+        justify-content: end;
+        a{
+            font-size: 18px;
+            &:hover{
+                background-color: #839788;
+            }
+        }    
+    }
+
+    footer{
+        font-size: 17px;
+    }
+}
+
+@media screen and (min-width: 1024px){ 
+    .header-logo{
+        width: 175px;
+        height: 60px;
+    }    
+
+    #navbarNav{       
+        justify-content: end;   
+        a{
+            font-size: 25px;
+            margin-right: 10px;
+        } 
+    } 
+
+    footer{
+        margin-top: 10px;
+        .footer-ul{
+            flex-direction: row;
+            justify-content: space-around;
+            font-size: 17px;      
+          }
+    }
 }
   
 

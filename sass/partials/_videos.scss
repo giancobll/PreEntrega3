@@ -1,0 +1,58 @@
+@use './index';
+
+.videos-main{
+    h1{
+        text-align: center;
+        margin: 20px;
+    }
+    .div-card-videos{
+        @extend %flex-colum                
+    }
+    .btn{
+        margin-bottom: 15px;
+    }
+}
+
+ /* TABLET */
+ @media screen and (min-width: 768px){
+    .videos-main{
+        .card{
+            width: 28rem;
+            margin-bottom: 30px;               
+            img{
+                width: auto;                
+            }             
+        }
+        .btn{
+            font-size: 25px;
+        }
+    }     
+}
+
+/* DESKTOP */
+@media screen and (min-width: 1024px){
+    .videos-main{
+        .div-card-videos{
+            display: grid;
+            grid-template-columns: 6fr 6fr;
+            grid-auto-rows: 6fr 6fr;
+            justify-items: center;
+        }
+        .card{           
+            width: 32rem;
+            img{
+                height: 400px;
+            }
+            h4{
+                font-size: 38px;
+            }
+            p{
+                font-size: 19px;
+            }
+            a{
+                font-size: 23px;
+            }
+        } 
+    } 
+}
+ 
